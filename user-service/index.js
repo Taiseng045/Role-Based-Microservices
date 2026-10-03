@@ -35,7 +35,7 @@ app.get("/user/viewprofile", async (req, res) => {
     const userId = req.headers["x-user-id"];
 
     const user = await User.findById(userId).select("-password");
-`
+
     if (!user) {
       return res.status(404).json({
         message: "Profile not found."
